@@ -25,9 +25,9 @@ CREATE TABLE Usuarios (
     us_modificado_por   NVARCHAR(10)
 );
 
-insert into Usuarios values ('Javier Rojas', 'javier@gmail.com',
+insert into Usuarios values ('Joshua Leiton', 'joshualeiton@gmail.com',
 '123', 1, 'A', getdate(), 'admin', null, null)
-insert into Usuarios values ('Johan Moya', 'johan@gmail.com',
+insert into Usuarios values ('Johel Leiton', 'johelleiton@gmail.com',
 '123', 2, 'A', getdate(), 'admin', null, null)
 
 drop table tiquetes
