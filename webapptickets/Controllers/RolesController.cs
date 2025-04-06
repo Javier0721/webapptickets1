@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebAPITickets.Database;
 using WebAPITickets.Models;
+using wWebAPITickets.Models;
 
 namespace WebAPITickets.Controllers
 {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebAPITickets.Models;
+using wWebAPITickets.Models;
 
 namespace WebAPITickets.Database
 {

@@ -1,4 +1,4 @@
-﻿namespace webapptickets.Models
+﻿namespace wWebAPITickets.Models
 {
     public class Roles
     {

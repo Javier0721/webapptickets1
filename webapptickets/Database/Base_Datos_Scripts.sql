@@ -47,8 +47,8 @@ CREATE TABLE Tiquetes (
 );
 
 INSERT INTO Tiquetes (ti_asunto, ti_categoria, ti_us_id_asigna, ti_urgencia, ti_importancia, ti_estado, ti_fecha_adicion, ti_adicionado_por)
-VALUES ('Problema de red', 'Redes', 2, 'Alta', 'Alta', 'A', GETDATE(), 'admin');
+VALUES ('Problema de controlador WIFI', 'Redes', 2, 'Alta', 'Alta', 'A', GETDATE(), 'admin');
 
 INSERT INTO Tiquetes (ti_asunto, ti_categoria, ti_us_id_asigna, ti_urgencia, ti_importancia, ti_estado, ti_fecha_adicion, ti_adicionado_por)
-VALUES ('Problema de compu', 'Hardware', 2, 'Alta', 'Alta', 'A', GETDATE(), 'admin');
+VALUES ('Problema de computadora', 'Hardware', 2, 'Alta', 'Alta', 'A', GETDATE(), 'admin');
 
