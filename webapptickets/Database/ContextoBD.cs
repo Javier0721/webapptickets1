@@ -4,15 +4,17 @@ using wWebAPITickets.Models;
 
 namespace WebAPITickets.Database
 {
-    public class ContextoBD : DbContext
+    public class ContextoDB : DbContext
     {
-        public ContextoBD(DbContextOptions<ContextoBD> options) : base(options)
+        private DbSet<Tiquetes> tiquetes;
+
+        public ContextoDB(DbContextOptions<ContextoDB> options) : base(options)
         {
 
         }
 
         public DbSet<Roles> Roles { get; set; }
-        public DbSet<Tiquetes> Tiquetes { get; set; }
+        public DbSet<Tiquetes> Tiquetes { get => tiquetes; set => tiquetes = value; }
         public DbSet<Usuarios> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

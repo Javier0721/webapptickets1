@@ -13,9 +13,9 @@ namespace WebAPITickets.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
-        private readonly ContextoBD _contexto;
+        private readonly ContextoDB _contexto;
 
-        public UsuariosController(ContextoBD contexto)
+        public UsuariosController(ContextoDB contexto)
         {
             _contexto = contexto;
         }

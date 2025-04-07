@@ -13,9 +13,9 @@ namespace WebAPITickets.Controllers
     [ApiController]
     public class TiquetesController : ControllerBase
     {
-        private readonly ContextoBD _contexto;
+        private readonly ContextoDB _contexto;
 
-        public TiquetesController(ContextoBD contexto)
+        public TiquetesController(ContextoDB contexto)
         {
             _contexto = contexto;
         }

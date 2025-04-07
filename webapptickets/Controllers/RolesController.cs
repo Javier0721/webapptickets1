@@ -14,9 +14,9 @@ namespace WebAPITickets.Controllers
     [ApiController]
     public class RolesController : ControllerBase
     {
-        private readonly ContextoBD _contexto;
+        private readonly ContextoDB _contexto;
 
-        public RolesController(ContextoBD contexto)
+        public RolesController(ContextoDB contexto)
         {
             _contexto = contexto;
         }

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Lista de Tiquetes";
+}
+
+<h2>Lista de Tiquetes</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Crear nuevo Tiquete</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Asunto</th>
+            <th>Categoría</th>
+            <th>Urgencia</th>
+            <th>Importancia</th>
+            <th>Estado</th>
+            <th>Fecha Adición</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ti_identificador</td>
+                <td>@item.ti_asunto</td>
+                <td>@item.ti_categoria</td>
+                <td>@item.ti_urgencia</td>
+                <td>@item.ti_importancia</td>
+                <td>@item.ti_estado</td>
+                <td>@item.ti_fecha_adicion.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a class="btn btn-info btn-sm" href="@Url.Action("Details", new { id = item.ti_identificador })">Detalles</a>
+                    <a class="btn btn-warning btn-sm" href="@Url.Action("Edit", new { id = item.ti_identificador })">Editar</a>
+                    <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", new { id = item.ti_identificador })">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
