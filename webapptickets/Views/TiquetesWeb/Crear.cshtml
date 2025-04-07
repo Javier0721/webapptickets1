@@ -1,45 +1,41 @@
-﻿@model WebAPITickets.Models.Tiquetes
+﻿@page
+@model CrearModel
 @{
-    ViewBag.Title = "Crear Ticket";
+    ViewData["Title"] = "Crear Ticket";
 }
 
 <h2>Crear Ticket</h2>
 
-<form asp-action="Crear" method="post">
-    <div>
-        <label>Asunto:</label>
-        <input asp-for="ti_asunto" />
-    </div>
-    <div>
-        <label>Categoría:</label>
-        <select asp-for="ti_categoria">
-            <option>Hardware</option>
-            <option>Software</option>
-            <option>Red</option>
-        </select>
-    </div>
-    <div>
-        <label>Urgencia:</label>
-        <select asp-for="ti_urgencia">
-            <option>Baja</option>
-            <option>Media</option>
-            <option>Alta</option>
-        </select>
-    </div>
-    <div>
-        <label>Importancia:</label>
-        <select asp-for="ti_importancia">
-            <option>Baja</option>
-            <option>Media</option>
-            <option>Alta</option>
-        </select>
-    </div>
-    <div>
-        <label>Asignado a (ID):</label>
-        <input asp-for="ti_us_id_asigna" />
-    </div>
+<form method="post">
+    <label>Asunto:</label>
+    <input asp-for="Tiquete.ti_asunto" />
+
+    <label>Categoría:</label>
+    <select asp-for="Tiquete.ti_categoria">
+        <option>Hardware</option>
+        <option>Software</option>
+        <option>Red</option>
+    </select>
+
+    <label>Urgencia:</label>
+    <select asp-for="Tiquete.ti_urgencia">
+        <option>Baja</option>
+        <option>Media</option>
+        <option>Alta</option>
+    </select>
+
+    <label>Importancia:</label>
+    <select asp-for="Tiquete.ti_importancia">
+        <option>Baja</option>
+        <option>Media</option>
+        <option>Alta</option>
+    </select>
+
+    <label>Asignado a (ID usuario):</label>
+    <input asp-for="Tiquete.ti_us_id_asigna" />
+
+    <input type="hidden" asp-for="Tiquete.ti_estado" value="Creado" />
+    <input type="hidden" asp-for="Tiquete.ti_adicionado_por" value="sistema" />
 
     <button type="submit">Guardar</button>
 </form>
-
-<a href="@Url.Action("Index")">Volver</a>
