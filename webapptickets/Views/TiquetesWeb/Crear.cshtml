@@ -1,0 +1,57 @@
+﻿
+
+@{
+    ViewBag.Title = "Crear Ticket";
+}
+
+<h2>Crear nuevo Ticket</h2>
+
+<form asp-action="Crear" method="post">
+    <div class="form-group">
+        <label>Asunto</label>
+        <input asp-for="ti_asunto" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Categoría</label>
+        <select asp-for="ti_categoria" class="form-control">
+            <option>Hardware</option>
+            <option>Software</option>
+            <option>Red</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Asignar a (ID)</label>
+        <input asp-for="ti_us_id_asigna" type="number" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Urgencia</label>
+        <select asp-for="ti_urgencia" class="form-control">
+            <option>Alta</option>
+            <option>Media</option>
+            <option>Baja</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Importancia</label>
+        <select asp-for="ti_importancia" class="form-control">
+            <option>Alta</option>
+            <option>Media</option>
+            <option>Baja</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Estado</label>
+        <select asp-for="ti_estado" class="form-control">
+            <option value="A">Activo</option>
+            <option value="P">Pendiente</option>
+            <option value="R">Resuelto</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

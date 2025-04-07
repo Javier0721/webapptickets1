@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebAPITickets.Models.Tiquetes>
+@{
+    ViewBag.Title = "Listado de Tickets";
+}
+
+<h2>Tickets</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Asunto</th>
+            <th>Categoría</th>
+            <th>Urgencia</th>
+            <th>Importancia</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ti_asunto</td>
+                <td>@item.ti_categoria</td>
+                <td>@item.ti_urgencia</td>
+                <td>@item.ti_importancia</td>
+                <td>@item.ti_estado</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-success" asp-action="Crear">Crear Nuevo</a>
