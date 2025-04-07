@@ -1,12 +1,22 @@
-﻿@model IEnumerable<WebAPITickets.Models.Tiquetes>
-
+﻿@model List<WebAPITickets.Models.Tiquetes>
 @{
     ViewBag.Title = "Listado de Tickets";
 }
 
 <h2>Tickets</h2>
 
-<table class="table table-bordered">
+<form method="get">
+    <label>Filtrar por estado:</label>
+    <select name="estado">
+        <option value="">Todos</option>
+        <option>Creado</option>
+        <option>Pendiente</option>
+        <option>Resuelto</option>
+    </select>
+    <button type="submit">Filtrar</button>
+</form>
+
+<table class="table">
     <thead>
         <tr>
             <th>Asunto</th>
@@ -17,17 +27,17 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var t in Model)
         {
             <tr>
-                <td>@item.ti_asunto</td>
-                <td>@item.ti_categoria</td>
-                <td>@item.ti_urgencia</td>
-                <td>@item.ti_importancia</td>
-                <td>@item.ti_estado</td>
+                <td>@t.ti_asunto</td>
+                <td>@t.ti_categoria</td>
+                <td>@t.ti_urgencia</td>
+                <td>@t.ti_importancia</td>
+                <td>@t.ti_estado</td>
             </tr>
         }
     </tbody>
 </table>
 
-<a class="btn btn-success" asp-action="Crear">Crear Nuevo</a>
+<a class="btn btn-primary" href="@Url.Action("Crear")">Nuevo Ticket</a>
